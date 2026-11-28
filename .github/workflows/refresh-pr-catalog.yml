@@ -1,0 +1,109 @@
+name: Refresh PR catalog
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: Open PR number targeting the default branch
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  refresh:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: refresh-pr-catalog-${{ inputs.pr }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pull-requests: read
+    env:
+      PR_NUMBER: ${{ inputs.pr }}
+      BASE_REF: ${{ github.event.repository.default_branch }}
+    steps:
+      - name: Resolve the PR branch
+        id: pr
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const raw = process.env.PR_NUMBER;
+            if (!/^[1-9]\d*$/.test(raw) || !Number.isSafeInteger(Number(raw))) {
+              throw new Error('PR number must be a positive integer');
+            }
+            const { owner, repo } = context.repo;
+            const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: Number(raw) });
+            if (pr.state !== 'open' || pr.base.ref !== process.env.BASE_REF || !pr.head.repo) {
+              throw new Error('Expected an open PR targeting the default branch with an existing head repository');
+            }
+            const fork = pr.head.repo.id !== pr.base.repo.id;
+            if (fork && !pr.maintainer_can_modify) {
+              throw new Error('The fork PR must allow edits from maintainers');
+            }
+            core.setOutput('fork', fork);
+            core.setOutput('head_repo', pr.head.repo.full_name);
+            core.setOutput('head_ref', pr.head.ref);
+            core.setOutput('head_sha', pr.head.sha);
+
+      # Only the default branch's tooling is checked out or executed.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 24
+      - name: Merge and regenerate
+        id: refresh
+        shell: bash
+        env:
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+        run: |
+          git fetch --no-tags --no-recurse-submodules origin "refs/pull/$PR_NUMBER/head"
+          if [[ $(git rev-parse FETCH_HEAD) != "$HEAD_SHA" ]]; then
+            echo 'The PR head changed. Run the workflow again.' >&2
+            exit 1
+          fi
+          bash .github/scripts/refresh-pr-catalog.sh "$HEAD_SHA"
+
+      - name: Push to the PR branch
+        if: steps.refresh.outputs.commit != ''
+        shell: bash
+        env:
+          GH_TOKEN: ${{ steps.pr.outputs.fork == 'true' && secrets.PR_REFRESH_TOKEN || github.token }}
+          HAS_FORK_TOKEN: ${{ secrets.PR_REFRESH_TOKEN != '' }}
+          IS_FORK: ${{ steps.pr.outputs.fork }}
+          HEAD_REPO: ${{ steps.pr.outputs.head_repo }}
+          HEAD_REF: ${{ steps.pr.outputs.head_ref }}
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          REFRESH_COMMIT: ${{ steps.refresh.outputs.commit }}
+        run: |
+          if [[ "$IS_FORK" == true && "$HAS_FORK_TOKEN" != true ]]; then
+            echo 'Set the PR_REFRESH_TOKEN repository secret to push to an editable fork branch.' >&2
+            exit 1
+          fi
+          if ! gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" |
+            jq -e --arg base "$BASE_REF" --arg repo "$HEAD_REPO" --arg ref "$HEAD_REF" \
+              --arg sha "$HEAD_SHA" --argjson fork "$IS_FORK" '
+                .state == "open" and .base.ref == $base and .head.repo.full_name == $repo and
+                .head.ref == $ref and .head.sha == $sha and ($fork == false or .maintainer_can_modify)
+              ' >/dev/null; then
+            echo 'The PR head, base, state, or edit permission changed. Run the workflow again.' >&2
+            exit 1
+          fi
+          current_base=$(gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/$BASE_REF" --jq .object.sha)
+          if [[ "$current_base" != "$(git rev-parse HEAD)" ]]; then
+            echo 'The default branch advanced. Run the workflow again.' >&2
+            exit 1
+          fi
+          git check-ref-format "refs/heads/$HEAD_REF"
+          if [[ "$HEAD_REPO" == "$GITHUB_REPOSITORY" && "$HEAD_REF" == "$BASE_REF" ]]; then
+            echo 'Refusing to push to the default branch.' >&2
+            exit 1
+          fi
+          git -c credential.helper= -c 'credential.helper=!gh auth git-credential' \
+            push "$GITHUB_SERVER_URL/$HEAD_REPO.git" "$REFRESH_COMMIT:refs/heads/$HEAD_REF"

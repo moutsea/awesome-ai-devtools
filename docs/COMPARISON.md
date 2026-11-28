@@ -2,10 +2,11 @@
 
 # Full Comparison Matrix
 
-This is the complete comparison matrix for all 304 reviewed tools.
+This is the complete comparison matrix for all 309 reviewed tools.
 
 | Tool | Main shelf | OSS | Local | Self-hosted | CLI | IDE | MCP | Links |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [100x Engineer Skill](https://github.com/DeadInternetStudios/100x-engineer-skill) | Agent skill packs | Yes | Yes | No | Yes | No | No | [Docs](https://github.com/DeadInternetStudios/100x-engineer-skill#readme) / [Repo](https://github.com/DeadInternetStudios/100x-engineer-skill) |
 | [Agent Browser](https://github.com/vercel-labs/agent-browser) | Browser agents | Yes | No | No | Yes | No | No | [Repo](https://github.com/vercel-labs/agent-browser) |
 | [Agent Eval Framework](https://github.com/goker/agent-eval-framework) | Agent evals | Yes | No | No | No | No | No | [Repo](https://github.com/goker/agent-eval-framework) |
 | [Agent Island](https://agent-island.dev) | Agent observability | Yes | Yes | No | No | No | No | [Website](https://agent-island.dev) / [Repo](https://github.com/tristan666666/agent-island) |
@@ -53,6 +54,7 @@ This is the complete comparison matrix for all 304 reviewed tools.
 | [AWS Documentation MCP Server](https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server) | Documentation agents | Yes | No | No | No | No | Yes | [Docs](https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server) / [Repo](https://github.com/awslabs/mcp) |
 | [ax](https://github.com/Necmttn/ax) | Agent observability | Yes | Yes | No | Yes | No | Yes | [Repo](https://github.com/Necmttn/ax) |
 | [Azure DevOps Skills](https://github.com/microsoft/azure-devops-skills) | Agent skill packs | Yes | Yes | No | No | No | Yes | [Repo](https://github.com/microsoft/azure-devops-skills) |
+| [behave](https://github.com/emirmrkaljevic/behave) | Test generation agents | Yes | Yes | No | Yes | No | Yes | [Docs](https://github.com/emirmrkaljevic/behave/blob/main/docs/mcp.md) / [Repo](https://github.com/emirmrkaljevic/behave) |
 | [Bito AI Code Review Agent](https://bito.ai/product/ai-code-review-agent/) | AI code review tools | No | No | No | No | No | No | [Website](https://bito.ai/product/ai-code-review-agent/) / [Docs](https://docs.bito.ai/ai-code-reviews-in-git/install-run-using-bito-cloud/guide-for-github) |
 | [Braintrust](https://www.braintrust.dev) | Agent observability | No | No | No | No | No | No | [Website](https://www.braintrust.dev) / [Docs](https://docs.braintrust.dev) |
 | [Browser MCP](https://browsermcp.io) | Browser agents | No | Yes | No | No | No | Yes | [Docs](https://browsermcp.io) |
@@ -95,6 +97,7 @@ This is the complete comparison matrix for all 304 reviewed tools.
 | [DeepEval](https://deepeval.com) | Agent evals | Yes | Yes | No | Yes | No | No | [Website](https://deepeval.com) / [Repo](https://github.com/confident-ai/deepeval) |
 | [DeepTeam](https://github.com/confident-ai/deepteam) | Agent evals | Yes | No | No | Yes | No | No | [Repo](https://github.com/confident-ai/deepteam) |
 | [DeepWiki](https://deepwiki.com) | Documentation agents | No | No | No | No | No | No | [Website](https://deepwiki.com) / [Docs](https://deepwiki.directory) |
+| [DESIGN:OS CLI](https://github.com/jangtrinh/design-os) | Agent skill packs | No | Yes | No | Yes | No | No | [Repo](https://github.com/jangtrinh/design-os) |
 | [DevBox AI Dev Stack](https://github.com/gl0bal01/devbox#readme) | Self-hosted AI dev stacks | Yes | No | Yes | Yes | No | No | [Docs](https://github.com/gl0bal01/devbox#readme) / [Repo](https://github.com/gl0bal01/devbox) |
 | [Devin](https://devin.ai/) | Coding agents | No | No | No | No | No | No | [Website](https://devin.ai/) / [Docs](https://docs.devin.ai/es/get-started/devin-intro) |
 | [Dify](https://dify.ai) | Self-hosted AI dev stacks | Yes | No | Yes | No | No | No | [Website](https://dify.ai) / [Docs](https://docs.dify.ai) / [Repo](https://github.com/langgenius/dify) |
@@ -186,6 +189,7 @@ This is the complete comparison matrix for all 304 reviewed tools.
 | [MCP Rust SDK (rmcp)](https://crates.io/crates/rmcp) | MCP tooling | Yes | No | No | No | No | Yes | [Docs](https://crates.io/crates/rmcp) / [Repo](https://github.com/modelcontextprotocol/rust-sdk) |
 | [mcp-cli (wong2)](https://www.npmjs.com/package/@wong2/mcp-cli) | MCP tooling | Yes | Yes | No | Yes | No | Yes | [Website](https://www.npmjs.com/package/@wong2/mcp-cli) / [Repo](https://github.com/wong2/mcp-cli) |
 | [mcpscan.ai](https://mcpscan.ai) | MCP tooling | No | No | No | No | No | Yes | [Docs](https://mcpscan.ai) |
+| [Mercury CLI](https://mercury-cli.ai/) | Coding agents | Yes | Yes | No | Yes | No | No | [Website](https://mercury-cli.ai/) / [Docs](https://mercury-cli.ai/docs/) / [Repo](https://github.com/Whq02/MercuryCLI) |
 | [Microsoft Skills](https://github.com/microsoft/skills) | Agent skill packs | Yes | Yes | No | No | No | Yes | [Repo](https://github.com/microsoft/skills) |
 | [Mintlify](https://www.mintlify.com) | Documentation agents | No | No | No | No | No | No | [Website](https://www.mintlify.com) / [Docs](https://www.mintlify.com/docs) |
 | [Mistral Inference](https://github.com/mistralai/mistral-inference#readme) | Local LLM developer tools | Yes | No | Yes | Yes | No | No | [Docs](https://github.com/mistralai/mistral-inference#readme) / [Repo](https://github.com/mistralai/mistral-inference) |
@@ -293,6 +297,7 @@ This is the complete comparison matrix for all 304 reviewed tools.
 | [UIZZE](https://uizze.com) | Agent skill packs | No | No | No | No | No | Yes | [Website](https://uizze.com) / [Docs](https://uizze.com/docs) |
 | [Unitxt](https://www.unitxt.ai) | Agent evals | Yes | No | No | Yes | No | No | [Website](https://www.unitxt.ai) / [Docs](https://www.unitxt.ai/en/main/docs/introduction.html) / [Repo](https://github.com/ibm/unitxt) |
 | [UpdateBot](https://github.com/jenkins-x/updatebot) | Repo automation tools | Yes | Yes | No | Yes | No | No | [Repo](https://github.com/jenkins-x/updatebot) |
+| [usb-rea](https://github.com/emirmrkaljevic/usb-rea) | MCP servers | Yes | Yes | No | Yes | No | Yes | [Docs](https://github.com/emirmrkaljevic/usb-rea/blob/main/docs/mcp.md) / [Repo](https://github.com/emirmrkaljevic/usb-rea) |
 | [Vectara Open Evaluation UI](https://www.vectara.com/blog/open-evaluation) | Agent evals | No | No | No | No | No | No | [Website](https://www.vectara.com/blog/open-evaluation) / [Docs](https://docs.vectara.com/docs/hallucination-and-evaluation/open-eval-framework) |
 | [vLLM](https://vllm.ai) | Local LLM developer tools | Yes | No | Yes | Yes | No | No | [Website](https://vllm.ai) / [Docs](https://docs.vllm.ai/en/stable/serving/openai_compatible_server.html) / [Repo](https://github.com/vllm-project/vllm) |
 | [Webagent (webagent-cloud)](https://github.com/webagent-cloud/webagent) | Browser agents | Yes | No | No | No | No | No | [Repo](https://github.com/webagent-cloud/webagent) |

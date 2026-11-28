@@ -37,10 +37,12 @@ jobs:
             if (pr.state !== 'open' || author.type !== 'User' ||
                 pr.assignees.some(user => user.login.toLowerCase() === author.login.toLowerCase())) return;
             try {
-              await github.rest.issues.checkUserCanBeAssigned({ owner, repo, assignee: author.login });
+              await github.rest.issues.checkUserCanBeAssignedToIssue({
+                owner, repo, issue_number: pull_number, assignee: author.login
+              });
             } catch (error) {
               if (error.status !== 404) throw error;
-              core.warning(`Author ${author.login} cannot be assigned to this repository`);
+              core.warning(`Author ${author.login} cannot be assigned to PR #${pull_number}`);
               return;
             }
             const { data: assigned } = await github.rest.issues.addAssignees({
