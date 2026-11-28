@@ -8,7 +8,7 @@
 
 <p align="center">Window-shop coding agents, IDE assistants, MCP tooling, evals, observability, security, and self-hosted AI dev stacks.</p>
 
-<p align="center"><code>392 tools</code> <code>304 reviewed</code> <code>88 draft</code> <code>18 active reviewed shelves</code></p>
+<p align="center"><code>397 tools</code> <code>309 reviewed</code> <code>88 draft</code> <code>18 active reviewed shelves</code></p>
 
 ## Why this exists
 
@@ -70,11 +70,11 @@ No rankings. No launch hype. Just a clean storefront for discovering tools worth
 
 ### Build with agents
 
-[Coding agents](#coding-agents) (35) · [Terminal agents](#terminal-agents) (23) · [IDE assistants](#ide-assistants) (17) · [Browser agents](#browser-agents) (25)
+[Coding agents](#coding-agents) (36) · [Terminal agents](#terminal-agents) (24) · [IDE assistants](#ide-assistants) (17) · [Browser agents](#browser-agents) (25)
 
 ### Extend agents
 
-[MCP servers](#mcp-servers) (24) · [MCP clients](#mcp-clients) (7) · [MCP tooling](#mcp-tooling) (19) · [Agent skill packs](#agent-skill-packs) (28)
+[MCP servers](#mcp-servers) (26) · [MCP clients](#mcp-clients) (7) · [MCP tooling](#mcp-tooling) (19) · [Agent skill packs](#agent-skill-packs) (30)
 
 ### Operate agents
 
@@ -86,11 +86,11 @@ No rankings. No launch hype. Just a clean storefront for discovering tools worth
 
 ### Automate repo work
 
-[Repo automation tools](#repo-automation-tools) (28) · [AI code review tools](#ai-code-review-tools) (11) · [Documentation agents](#documentation-agents) (24) · [Test generation agents](#test-generation-agents) (7)
+[Repo automation tools](#repo-automation-tools) (28) · [AI code review tools](#ai-code-review-tools) (12) · [Documentation agents](#documentation-agents) (24) · [Test generation agents](#test-generation-agents) (8)
 
 ## Comparison Matrix
 
-_Showing a curated top 50 tools. See [docs/COMPARISON.md](docs/COMPARISON.md) for the full matrix of all 304 reviewed tools._
+_Showing a curated top 50 tools. See [docs/COMPARISON.md](docs/COMPARISON.md) for the full matrix of all 309 reviewed tools._
 
 | Tool | Main shelf | OSS | Local | Self-hosted | CLI | IDE | MCP | Links |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -127,6 +127,7 @@ _Showing a curated top 50 tools. See [docs/COMPARISON.md](docs/COMPARISON.md) fo
 | [Agent Notifications](https://agent-notifications.com/) | MCP servers | Yes | Yes | No | Yes | No | Yes | [Website](https://agent-notifications.com/) / [Docs](https://github.com/777genius/agent-notifications/blob/main/docs/INSTALLATION.md) / [Repo](https://github.com/777genius/agent-notifications) |
 | [Atomic Agent](https://atomicagent.io) | Terminal agents | Yes | Yes | No | Yes | No | Yes | [Website](https://atomicagent.io) / [Docs](https://atomicagent.io/docs) / [Repo](https://github.com/AtomicBot-ai/atomic-agent) |
 | [ax](https://github.com/Necmttn/ax) | Agent observability | Yes | Yes | No | Yes | No | Yes | [Repo](https://github.com/Necmttn/ax) |
+| [behave](https://github.com/emirmrkaljevic/behave) | Test generation agents | Yes | Yes | No | Yes | No | Yes | [Docs](https://github.com/emirmrkaljevic/behave/blob/main/docs/mcp.md) / [Repo](https://github.com/emirmrkaljevic/behave) |
 | [Gemini CLI](https://developers.google.com/gemini-code-assist/docs/gemini-cli) | Coding agents | Yes | Yes | No | Yes | No | Yes | [Docs](https://developers.google.com/gemini-code-assist/docs/gemini-cli) / [Repo](https://github.com/google-gemini/gemini-cli) |
 | [Goose](https://goose-docs.ai/) | Coding agents | Yes | Yes | No | Yes | No | Yes | [Website](https://goose-docs.ai/) / [Docs](https://goose-docs.ai/docs/quickstart/) / [Repo](https://github.com/aaif-goose/goose) |
 | [Harbor CLI Stack](https://github.com/harbor-ai/harbor#readme) | Self-hosted AI dev stacks | Yes | Yes | Yes | Yes | No | No | [Docs](https://github.com/harbor-ai/harbor#readme) / [Repo](https://github.com/harbor-ai/harbor) |
@@ -143,7 +144,6 @@ _Showing a curated top 50 tools. See [docs/COMPARISON.md](docs/COMPARISON.md) fo
 | [Ruflo](https://github.com/ruvnet/ruflo) | Coding agents | Yes | No | Yes | Yes | No | Yes | [Docs](https://github.com/ruvnet/ruflo#readme) / [Repo](https://github.com/ruvnet/ruflo) |
 | [SandBase CLI](https://github.com/sandbaseai/cli) | MCP tooling | Yes | Yes | No | Yes | No | Yes | [Docs](https://github.com/sandbaseai/cli#readme) / [Repo](https://github.com/sandbaseai/cli) |
 | [Self-hosted AI Starter Kit (n8n)](https://docs.n8n.io/hosting/starter-kits/ai-starter-kit/) | Self-hosted AI dev stacks | Yes | Yes | Yes | Yes | No | No | [Docs](https://docs.n8n.io/hosting/starter-kits/ai-starter-kit/) / [Repo](https://github.com/n8n-io/self-hosted-ai-starter-kit) |
-| [Sillage](https://github.com/MarlBurroW/sillage) | Coding agents | Yes | No | Yes | Yes | No | Yes | [Repo](https://github.com/MarlBurroW/sillage) |
 
 <p align="center"><img src="assets/awesome-ai-devtools-social-preview.gif" alt="Awesome AI Devtools ecosystem map" width="100%"></p>
 
@@ -175,6 +175,7 @@ Agentic tools that can inspect, modify, and reason about source code.
 | [Jules](https://jules.google/) | Google asynchronous coding agent for GitHub that fixes bugs, adds features, and updates documentation. | API · Web · Hosted | [Website](https://jules.google/) / [Docs](https://jules.google/docs/) |
 | [Junie](https://www.jetbrains.com/junie/) | JetBrains coding agent for IDEs and terminal that plans, edits, tests, and reviews project changes. | CLI · IDE · Hybrid | [Website](https://www.jetbrains.com/junie/) / [Docs](https://www.jetbrains.com/help/ai-assistant/junie-agent.html) / [Repo](https://github.com/JetBrains/junie) |
 | [Kolega Code](https://github.com/kolega-ai/kolega-code) | Open-source terminal coding agent where the model writes its own multi-agent workflows (Gigacode) for repo-wide tasks. | CLI · Local | [Docs](https://kolega-ai.github.io/kolega-code/) / [Repo](https://github.com/kolega-ai/kolega-code) |
+| [Mercury CLI](https://mercury-cli.ai/) | Open-source terminal coding agent with a built-in debugger (bundled Python and JavaScript adapters) and 57-language syntax-tree search and rewrite, on cloud or local models. | CLI · Local | [Website](https://mercury-cli.ai/) / [Docs](https://mercury-cli.ai/docs/) / [Repo](https://github.com/Whq02/MercuryCLI) |
 | [molt](https://solvyx.xyz/work/molt) | Open-source coding agent for terminal and desktop that refuses done until project checks pass on disk. | CLI · Desktop · Local | [Website](https://solvyx.xyz/work/molt) / [Repo](https://github.com/solvyxtech/molt) |
 | [mu](https://github.com/qybaihe/mu) | Open-source coding agent built on pi in which a small judge model answers routine decisions, such as which tool output enters the context. | CLI · Desktop · Local | [Docs](https://github.com/qybaihe/mu/tree/main/docs) / [Repo](https://github.com/qybaihe/mu) |
 | [OpenAI Codex CLI](https://github.com/openai/codex) | Local terminal coding agent from OpenAI that can inspect code, edit files, and run commands in a developer workspace. | CLI · Hybrid | [Docs](https://developers.openai.com/codex/cli/) / [Repo](https://github.com/openai/codex) |
@@ -212,6 +213,7 @@ AI developer tools primarily operated from a command-line interface.
 | [Gemini CLI](https://developers.google.com/gemini-code-assist/docs/gemini-cli) | Open-source terminal coding agent that uses tool calls and MCP servers to work on repository tasks. | CLI · MCP · Local | [Docs](https://developers.google.com/gemini-code-assist/docs/gemini-cli) / [Repo](https://github.com/google-gemini/gemini-cli) |
 | [Junie](https://www.jetbrains.com/junie/) | JetBrains coding agent for IDEs and terminal that plans, edits, tests, and reviews project changes. | CLI · IDE · Hybrid | [Website](https://www.jetbrains.com/junie/) / [Docs](https://www.jetbrains.com/help/ai-assistant/junie-agent.html) / [Repo](https://github.com/JetBrains/junie) |
 | [Kolega Code](https://github.com/kolega-ai/kolega-code) | Open-source terminal coding agent where the model writes its own multi-agent workflows (Gigacode) for repo-wide tasks. | CLI · Local | [Docs](https://kolega-ai.github.io/kolega-code/) / [Repo](https://github.com/kolega-ai/kolega-code) |
+| [Mercury CLI](https://mercury-cli.ai/) | Open-source terminal coding agent with a built-in debugger (bundled Python and JavaScript adapters) and 57-language syntax-tree search and rewrite, on cloud or local models. | CLI · Local | [Website](https://mercury-cli.ai/) / [Docs](https://mercury-cli.ai/docs/) / [Repo](https://github.com/Whq02/MercuryCLI) |
 | [molt](https://solvyx.xyz/work/molt) | Open-source coding agent for terminal and desktop that refuses done until project checks pass on disk. | CLI · Desktop · Local | [Website](https://solvyx.xyz/work/molt) / [Repo](https://github.com/solvyxtech/molt) |
 | [mu](https://github.com/qybaihe/mu) | Open-source coding agent built on pi in which a small judge model answers routine decisions, such as which tool output enters the context. | CLI · Desktop · Local | [Docs](https://github.com/qybaihe/mu/tree/main/docs) / [Repo](https://github.com/qybaihe/mu) |
 | [OpenAI Codex CLI](https://github.com/openai/codex) | Local terminal coding agent from OpenAI that can inspect code, edit files, and run commands in a developer workspace. | CLI · Hybrid | [Docs](https://developers.openai.com/codex/cli/) / [Repo](https://github.com/openai/codex) |
@@ -288,6 +290,7 @@ Model Context Protocol servers that expose tools, resources, or prompts.
 | [Anki MCP Server](https://ankimcp.ai) | MCP server that lets AI assistants interact with Anki flashcards and spaced-repetition workflows. | MCP · Local | [Website](https://ankimcp.ai) / [Repo](https://github.com/ankimcp/anki-mcp-server) |
 | [ArXiv MCP Server](https://github.com/blazickjp/arxiv-mcp-server) | MCP server for searching arXiv papers and exposing academic paper content to AI assistants. | MCP · Local | [Repo](https://github.com/blazickjp/arxiv-mcp-server) |
 | [ax](https://github.com/Necmttn/ax) | Local telemetry and recall graph for AI coding agents, with CLI, dashboard, MCP queries, and OTLP ingestion. | CLI · MCP · Web · Local | [Repo](https://github.com/Necmttn/ax) |
+| [behave](https://github.com/emirmrkaljevic/behave) | CLI and MCP server that records a command-line tool as a black box (cases generated from --help and the man page) and diffs a rewrite or refactor against that recording. | CLI · MCP · Local | [Docs](https://github.com/emirmrkaljevic/behave/blob/main/docs/mcp.md) / [Repo](https://github.com/emirmrkaljevic/behave) |
 | [Browserbase MCP Server](https://browserbase.com) | MCP server that lets AI agents control cloud browsers through Browserbase and Stagehand. | MCP · Hybrid | [Website](https://browserbase.com) / [Repo](https://github.com/browserbase/mcp-server-browserbase) |
 | [Chrome DevTools MCP](https://developer.chrome.com/blog/chrome-devtools-mcp) | MCP server that gives AI agents Chrome DevTools debugging capabilities for web applications. | MCP · Local | [Docs](https://developer.chrome.com/blog/chrome-devtools-mcp) / [Repo](https://github.com/ChromeDevTools/chrome-devtools-mcp) |
 | [Concord](https://getconcord.ai) | MCP server and CLI that lets coding agents such as Claude Code, Codex, Cursor and Gemini CLI message each other, claim work, share task memory and hand off. | CLI · MCP · Hybrid | [Website](https://getconcord.ai) / [Repo](https://github.com/Get-Concord-AI/concord-mcp) |
@@ -307,6 +310,7 @@ Model Context Protocol servers that expose tools, resources, or prompts.
 | [ServiceGraph MCP](https://github.com/servicegraph/mcp-server) | MCP server for exposing observability data such as service metrics and logs to AI agents. | MCP · Hosted | [Repo](https://github.com/servicegraph/mcp-server) |
 | [Supabase MCP Server](https://github.com/supabase-community/supabase-mcp) | Official Supabase MCP server for connecting AI assistants to Supabase projects and database operations. | MCP · Hosted | [Repo](https://github.com/supabase-community/supabase-mcp) |
 | [UIZZE](https://uizze.com) | UI reference platform and agent skill providing web and iOS screen patterns, design contracts, and finish-gate reviews for coding agents. | MCP · Skill Pack · Web · Hosted | [Website](https://uizze.com) / [Docs](https://uizze.com/docs) |
+| [usb-rea](https://github.com/emirmrkaljevic/usb-rea) | CLI and MCP server that infers a USB device protocol from captured vendor-app traffic and generates a Python/libusb driver for Linux. | CLI · MCP · Local | [Docs](https://github.com/emirmrkaljevic/usb-rea/blob/main/docs/mcp.md) / [Repo](https://github.com/emirmrkaljevic/usb-rea) |
 
 ### MCP clients
 
@@ -354,6 +358,7 @@ Reusable instruction, workflow, or capability packs for coding agents.
 
 | Tool | Good for | Experience | Links |
 | --- | --- | --- | --- |
+| [100x Engineer Skill](https://github.com/DeadInternetStudios/100x-engineer-skill) | Skill and CLI for Claude Code, Cursor and Codex that checks formal properties and requires recorded review evidence before a run can finish. | CLI · Skill Pack · Local | [Docs](https://github.com/DeadInternetStudios/100x-engineer-skill#readme) / [Repo](https://github.com/DeadInternetStudios/100x-engineer-skill) |
 | [Agent Powerups](https://github.com/yeaight7/agent-powerups) | Curated skill packs, commands, MCP configs, hooks, templates, and workflows for coding agents. | CLI · Desktop · MCP · Skill Pack · Template · Local | [Repo](https://github.com/yeaight7/agent-powerups) |
 | [Agent Skills](https://github.com/datalayer/agent-skills) | Python package to create, manage, and execute reusable code-based tool compositions for AI agents with MCP integration. | MCP · Local | [Repo](https://github.com/datalayer/agent-skills) |
 | [Agent Skills Specification](https://github.com/agentskills/agentskills) | Open specification and documentation for Agent Skills format maintained by Anthropic with reference SDK and examples. | Framework · Skill Pack | [Repo](https://github.com/agentskills/agentskills) |
@@ -369,6 +374,7 @@ Reusable instruction, workflow, or capability packs for coding agents.
 | [Cursorrules Collection](https://github.com/nedcodes-ok/cursorrules-collection) | 110+ tested .cursorrules and .mdc rule files for Cursor, Claude Code, Copilot, Windsurf, Gemini CLI, and Codex. | Template · Local | [Repo](https://github.com/nedcodes-ok/cursorrules-collection) |
 | [Custom Modes for Roo Code](https://github.com/jtgsystems/Custom-Modes-Roo-Code) | Collection of 171 specialized AI agent configurations for Roo Code across 9 categories with security-first principles. | Skill Pack · Template · Local | [Repo](https://github.com/jtgsystems/Custom-Modes-Roo-Code) |
 | [dbt Agent Skills](https://github.com/dbt-labs/dbt-agent-skills) | Curated Agent Skills for working with dbt to help AI agents understand and execute analytics engineering workflows. | Skill Pack · Local | [Repo](https://github.com/dbt-labs/dbt-agent-skills) |
+| [DESIGN:OS CLI](https://github.com/jangtrinh/design-os) | CLI and agent skills that compile a project's tokens, components and docs into a design store that Claude Code or Codex loads, with deterministic UI gates. | CLI · Skill Pack · Local | [Repo](https://github.com/jangtrinh/design-os) |
 | [dotskills](https://github.com/vincentkoc/dotskills) | Personal .skills repository for Codex, Cursor, and OpenClaw with reusable skill units bundling prompts, scripts, and validation workflows. | Skill Pack · Template · Local | [Repo](https://github.com/vincentkoc/dotskills) |
 | [Everything Claude Code](https://github.com/affaan-m/everything-claude-code) | Agent harness performance system with skills, hooks, MCP configs, memory optimization, and cross-harness workflows. | CLI · MCP · Local | [Docs](https://github.com/affaan-m/everything-claude-code#readme) / [Repo](https://github.com/affaan-m/everything-claude-code) |
 | [helderberto/skills](https://github.com/helderberto/skills) | Reusable AI agent skills for development workflows including code review, refactoring, TDD, security audit, and git automation. | Skill Pack · Local | [Repo](https://github.com/helderberto/skills) |
@@ -583,6 +589,7 @@ AI-assisted tools for reviewing changes, pull requests, and code quality.
 
 | Tool | Good for | Experience | Links |
 | --- | --- | --- | --- |
+| [100x Engineer Skill](https://github.com/DeadInternetStudios/100x-engineer-skill) | Skill and CLI for Claude Code, Cursor and Codex that checks formal properties and requires recorded review evidence before a run can finish. | CLI · Skill Pack · Local | [Docs](https://github.com/DeadInternetStudios/100x-engineer-skill#readme) / [Repo](https://github.com/DeadInternetStudios/100x-engineer-skill) |
 | [Amazon Q Developer](https://aws.amazon.com/q/developer/) | AWS coding assistant with IDE, CLI, and GitHub agents for coding, testing, review, and transformations. | CLI · GitHub app · IDE · Hybrid | [Website](https://aws.amazon.com/q/developer/) / [Docs](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html) |
 | [Bito AI Code Review Agent](https://bito.ai/product/ai-code-review-agent/) | Repository review agent for GitHub, GitLab, and Bitbucket pull or merge request workflows. | GitHub app · Hosted | [Website](https://bito.ai/product/ai-code-review-agent/) / [Docs](https://docs.bito.ai/ai-code-reviews-in-git/install-run-using-bito-cloud/guide-for-github) |
 | [CodeRabbit](https://coderabbit.ai/) | AI code review agent for pull requests, local IDE review, and terminal-based review workflows. | CLI · GitHub app · IDE · Hybrid | [Website](https://coderabbit.ai/) / [Docs](https://docs.coderabbit.ai/) |
@@ -642,6 +649,7 @@ AI tools that create, improve, or maintain automated tests.
 | --- | --- | --- | --- |
 | [Agent QA](https://vostride.com/docs/agent-qa) | TypeScript QA agent that authors, runs, and repairs natural-language web and mobile tests through a CLI, dashboard, MCP server, and agent skills. | CLI · MCP · Skill Pack · Web · Local | [Website](https://vostride.com/docs/agent-qa) / [Docs](https://vostride.com/docs/agent-qa/quickstart) / [Repo](https://github.com/vostride/agent-qa) |
 | [Amazon Q Developer](https://aws.amazon.com/q/developer/) | AWS coding assistant with IDE, CLI, and GitHub agents for coding, testing, review, and transformations. | CLI · GitHub app · IDE · Hybrid | [Website](https://aws.amazon.com/q/developer/) / [Docs](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html) |
+| [behave](https://github.com/emirmrkaljevic/behave) | CLI and MCP server that records a command-line tool as a black box (cases generated from --help and the man page) and diffs a rewrite or refactor against that recording. | CLI · MCP · Local | [Docs](https://github.com/emirmrkaljevic/behave/blob/main/docs/mcp.md) / [Repo](https://github.com/emirmrkaljevic/behave) |
 | [Junie](https://www.jetbrains.com/junie/) | JetBrains coding agent for IDEs and terminal that plans, edits, tests, and reviews project changes. | CLI · IDE · Hybrid | [Website](https://www.jetbrains.com/junie/) / [Docs](https://www.jetbrains.com/help/ai-assistant/junie-agent.html) / [Repo](https://github.com/JetBrains/junie) |
 | [Qodo](https://www.qodo.ai/) | Code review and IDE assistant product focused on reviewing diffs, tests, and repository context. | GitHub app · IDE · Hosted | [Website](https://www.qodo.ai/) / [Docs](https://docs.qodo.ai/) |
 | [Qodo-Cover](https://github.com/qodo-ai/qodo-cover) | AI-powered tool that automatically generates unit tests and improves code coverage, runnable as a CLI or in CI. | CLI · GitHub app · Hybrid | [Docs](https://github.com/qodo-ai/qodo-cover#readme) / [Repo](https://github.com/qodo-ai/qodo-cover) |
@@ -661,14 +669,14 @@ Directories, curated lists, and registries of AI developer tools and resources.
 
 ## New Arrivals
 
+- 2026-11-28: [Mercury CLI](https://mercury-cli.ai/)
+- 2026-11-27: [100x Engineer Skill](https://github.com/DeadInternetStudios/100x-engineer-skill)
+- 2026-11-27: [behave](https://github.com/emirmrkaljevic/behave)
+- 2026-11-27: [usb-rea](https://github.com/emirmrkaljevic/usb-rea)
+- 2026-11-26: [DESIGN:OS CLI](https://github.com/jangtrinh/design-os)
 - 2026-11-25: [CodeI Lab](https://www.codeilab.com)
 - 2026-11-14: [Althar](https://althar.ai/)
 - 2026-11-02: [Concord](https://getconcord.ai)
-- 2026-11-02: [SpaceApp](https://spaceapp.dev/)
-- 2026-10-28: [Agent Notifications](https://agent-notifications.com/)
-- 2026-10-20: [PlaceCall](https://voygr.tech/placecall/)
-- 2026-10-11: [Oh My Android](https://royan.se/work/oh-my-android/)
-- 2026-10-07: [mu](https://github.com/qybaihe/mu)
 
 ## Needs review
 

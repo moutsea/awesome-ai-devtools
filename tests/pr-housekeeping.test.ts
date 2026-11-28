@@ -44,6 +44,11 @@ async function runWorkflow(name: string, pr: Pull, options: {
       issues: {
         checkUserCanBeAssigned: async (args: unknown) => {
           assert.deepEqual(args, { owner: "owner", repo: "repo", assignee: "contributor" });
+          // A fork contributor can be eligible on their own PR without being eligible repository-wide.
+          throw Object.assign(new Error("Not assignable repository-wide"), { status: 404 });
+        },
+        checkUserCanBeAssignedToIssue: async (args: unknown) => {
+          assert.deepEqual(args, { owner: "owner", repo: "repo", issue_number: 52, assignee: "contributor" });
           if (options.assignable === false) throw Object.assign(new Error("Not assignable"), { status: 404 });
         },
         addAssignees: async (args: unknown) => { writes.push(args); return { data: { assignees: [...pr.assignees, pr.user] } }; }

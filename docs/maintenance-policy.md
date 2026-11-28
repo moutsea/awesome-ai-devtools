@@ -77,7 +77,7 @@ Reviewers should check that sources are official, descriptions are factual, unce
 
 Three workflows maintain PR metadata, including contributions from forks:
 
-- **Assign author** adds the human author when a PR opens, including drafts. It preserves other assignees and skips bots, already-assigned authors, and authors GitHub cannot assign.
+- **Assign author** adds the human author when a PR opens, including drafts. It checks eligibility on the specific PR so fork contributors can be assigned. It preserves other assignees and skips bots, already-assigned authors, and authors GitHub cannot assign to the PR.
 - **Request review** requests `yeaight7` on opening, reopening, or becoming ready for review. Drafts and PRs authored by `yeaight7` are skipped. Existing reviewer requests are preserved; pending requests and completed reviews by `yeaight7` prevent repeated requests. Dismissed reviews do not count as completed reviews.
 - **PR labels** reconciles labels on opening, reopening, pushes, edits (including a base-branch change), and becoming ready for review. It also labels drafts.
 
@@ -99,3 +99,11 @@ Each workflow also provides **Run workflow** with a required `pr` number. Select
 These workflows use `pull_request_target` and the repository's `GITHUB_TOKEN` with explicit permissions. Author assignment and review requests execute inline trusted workflow code without checkout or installation. The labeler checks out the default branch, disables checkout credentials, and installs existing production dependencies with lifecycle scripts disabled. Proposed files are read through the GitHub API strictly as YAML data; PR code is never checked out or executed. Actions are pinned to commit SHAs.
 
 All classification completes before any label write. Invalid YAML, duplicate tool slugs, invalid category fields, custom YAML tags, aliases, incomplete file lists, and API failures during classification fail visibly without changing labels. Unexpected write failures also fail visibly; a subsequent run reconciles any partial update. If the PR changes during classification, the run skips writes so a subsequent event or manual run can reconcile its current state. Labels are serialized per PR. The workflows do not enforce review requirements, change branch protection, or replace the existing validation and maintenance workflows.
+
+## Refreshing a PR Catalog
+
+In GitHub, open **Actions → Refresh PR catalog → Run workflow**. Select `main` and enter the number of an open PR targeting `main`.
+
+The workflow merges `main` into the PR head, sorts the merged tool YAML, and regenerates `README.md` and `docs/COMPARISON.md` with the default branch's tooling. It resolves conflicts in those two generated files automatically. Resolve any other conflicts before retrying. PRs that change catalog tooling need to be regenerated with their reviewed tooling. If `main` is already merged, the workflow can refresh stale output in a regular commit. It pushes a fast-forward update to the PR branch after catalog validation passes.
+
+For an editable fork PR, set the repository Actions secret `PR_REFRESH_TOKEN` to a maintainer's classic personal access token with `public_repo` scope. Include `workflow` scope if merging `main` introduces or updates workflow files in the fork. The PR author must enable **Allow edits from maintainers**, and the target branch must permit the push. Same-repository PRs use `GITHUB_TOKEN`. GitHub may ask you to approve the resulting PR validation run when that token pushes the update.
